@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Language Translation Tool</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Language Translation Tool</h1>
+      <form method="post">
+        <div class="form-group">
+          <label for="text">Text to translate:</label>
+          <textarea class="form-control" id="text" name="text" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="language">Target language:</label>
+          <input type="text" class="form-control" id="language" name="language" placeholder="e.g., 'es' for Spanish">
+        </div>
+        <button type="submit" class="btn btn-primary">Translate</button>
+      </form>
+      {% if translated_text %}
+      <h2>Translated Text:</h2>
+      <p>{{ translated_text }}</p>
+      {% endif %}
+    </div>
+  </body>
+</html>
